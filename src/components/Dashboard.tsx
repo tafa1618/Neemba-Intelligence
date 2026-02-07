@@ -334,7 +334,7 @@ function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: K
                 {trend && trend !== 'stable' && change !== undefined && (
                     <div className={`flex items-center space-x-1 text-sm font-medium ${trend === 'up' ? 'text-green-400' : 'text-red-400'}`}>
                         {trend === 'up' ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
-                        <span>{Math.abs(change)}%</span>
+                        <span>{Math.abs(change!)}%</span>
                     </div>
                 )}
             </div>
