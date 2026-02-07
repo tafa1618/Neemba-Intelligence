@@ -336,6 +336,8 @@ interface HealthCardProps {
     value: string;
     sublabel?: string;
     status: 'success' | 'warning' | 'error';
+    change?: string;
+    trend?: 'up' | 'down' | 'neutral';
 }
 
 function HealthCard({ icon: Icon, label, value, sublabel, status }: HealthCardProps) {
@@ -372,8 +374,8 @@ function TabButton({ active, onClick, icon: Icon, label }: TabButtonProps) {
         <button
             onClick={onClick}
             className={`flex items-center space-x-2 px-6 py-4 font-medium transition-colors ${active
-                    ? 'text-caterpillar-yellow border-b-2 border-caterpillar-yellow'
-                    : 'text-slate-400 hover:text-white'
+                ? 'text-caterpillar-yellow border-b-2 border-caterpillar-yellow'
+                : 'text-slate-400 hover:text-white'
                 }`}
         >
             <Icon size={18} />

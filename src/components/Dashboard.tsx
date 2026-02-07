@@ -125,8 +125,6 @@ export default function Dashboard() {
                     label="Agents IA Actifs"
                     value={`${activeAgents}/${agents.length}`}
                     sublabel="en cours"
-                    change={0}
-                    trend="stable"
                     color="purple"
                 />
                 <KPICard
@@ -134,8 +132,6 @@ export default function Dashboard() {
                     label="Tâches IA Aujourd'hui"
                     value={totalAgentTasks}
                     sublabel="complétées"
-                    change={0}
-                    trend="stable"
                     color="cyan"
                 />
             </div>
@@ -315,8 +311,8 @@ interface KPICardProps {
     label: string;
     value: string | number;
     sublabel?: string;
-    change: number;
-    trend: 'up' | 'down' | 'stable';
+    change?: number;
+    trend?: 'up' | 'down' | 'stable';
     color: 'yellow' | 'green' | 'blue' | 'red' | 'purple' | 'cyan';
 }
 
