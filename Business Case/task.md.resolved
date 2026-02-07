@@ -1,0 +1,34 @@
+# Tâches MVP Dashboard Neemba Cat
+
+## Setup Projet
+- [x] Initialiser Vite + React + TypeScript
+- [x] Installer dépendances (Tailwind, Recharts, Lucide)
+- [x] Configuration Tailwind CSS
+
+## Données Mockées
+- [x] Créer données opportunités (projets construction Sénégal)
+- [x] Créer données concurrents (SMT/Komatsu, Bia/Volvo)
+- [x] Créer données alertes
+- [x] Créer échantillon clients
+
+## Components UI
+- [x] Layout principal + Sidebar
+- [x] Dashboard avec KPIs
+- [x] Graphiques (opportunités, parts de marché)
+- [x] Pipeline Kanban
+- [x] Vue Intelligence Concurrentielle
+- [x] Flux d'alertes
+- [x] Vue Clients
+
+## Polish & Finitions
+- [x] Design premium (glassmorphism, animations)
+- [x] Responsive design
+- [x] Icons et polish visuel
+- [x] README avec instructions
+
+## Authentification & Admin
+- [x] Page de connexion avec validation @neemba.com
+- [x] Système d'authentification mock
+- [x] Page Administration (users, settings, logs)
+- [x] Protection des routes
+- [x] Logout fonctionnel

@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Walkthrough complète du MVP de dashboard de veille concurrentielle pour Neemba Cat. Décrit l'architecture, les 5 vues principales (Dashboard, Pipeline, Concurrence, Alertes, Clients), les données mockées de 12 projets construction au Sénégal, l'analyse de SMT (Komatsu) et Bia (Volvo), les instructions d'installation et les recommandations pour la présentation à la hiérarchie. Inclut des captures d'écran des fonctionnalités clés et un scénario de démo structuré.",
+  "updatedAt": "2026-02-07T17:13:56.524079900Z"
+}

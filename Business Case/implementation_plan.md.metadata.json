@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan d'implémentation complet du système de veille concurrentielle pour Neemba Cat avec MVP fonctionnel, intégration Salesforce/ERP, architecture multi-agents IA, et roadmap en 4 phases. Détaille comment les agents exploiteront les données internes (ERP, Salesforce) et externes (web scraping) pour générer des insights actionnables, scoring intelligent et alertes contextualisées.",
+  "updatedAt": "2026-02-07T17:37:20.620223400Z",
+  "version": "1"
+}

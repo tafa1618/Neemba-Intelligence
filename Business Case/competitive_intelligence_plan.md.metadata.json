@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan détaillé pour un système de veille concurrentielle agentique pour Neemba Cat. Le document couvre l'architecture multi-agents (collecte web, analyse NLP, scoring d'opportunités), le stack technique (Python/FastAPI, LangGraph, PostgreSQL, Vector DB), les fonctionnalités du dashboard, les sources de données (marchés publics, réseaux sociaux, presse), et un plan de mise en œuvre en 4 phases sur 6-7 mois. Inclut également des considérations légales, estimations budgétaires et ROI attendu.",
+  "updatedAt": "2026-02-07T16:50:58.512961700Z"
+}

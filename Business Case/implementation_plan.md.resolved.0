@@ -1,0 +1,79 @@
+# MVP Système de Veille Concurrentielle - Neemba Cat Sénégal
+
+## Objectif
+
+Créer un dashboard de démonstration pour convaincre la hiérarchie, avec données mockées réalistes du secteur Construction au Sénégal.
+
+## Contexte
+- **Secteur prioritaire** : Construction
+- **Concurrents** : SMT (Komatsu), Bia (BIA)
+- **Pays** : Sénégal
+- **Base clients** : 3000 clients (Excel)
+- **Besoin** : MVP solo, budget limité
+
+## Stack Technique (Simple & Moderne)
+- **Frontend** : Vite + React + TypeScript
+- **Styling** : Tailwind CSS
+- **Charts** : Recharts
+- **Icons** : Lucide React
+- **Pas de backend** : Données mockées en JSON
+
+## Fonctionnalités Démo
+
+### 1. Dashboard Principal
+- **KPIs** : Opportunités actives, Valeur pipeline, Taux conversion, Alertes
+- **Graphiques** : Évolution opportunités, Répartition sectorielle, Parts de marché
+
+### 2. Pipeline d'Opportunités
+- **Kanban** : Nouveau → Qualifié → En préparation → Soumis
+- Projets construction sénégalais réalistes
+
+### 3. Intelligence Concurrentielle
+- Profils SMT et Bia
+- Timeline activités
+- Carte de chaleur régionale
+
+### 4. Alertes & Insights
+- Nouveaux appels d'offres
+- Mouvements concurrents
+- Tendances détectées
+
+## Données Mockées Sénégal
+
+**Projets Construction** :
+- Autoroute Diamniadio-AIBD
+- Extension Port de Dakar
+- Construction Pont Thiès
+- Zone Industrielle Diass
+
+**Clients** : Eiffage, APIX, AGEROUTE, CSE, SOGEA-SATOM
+
+**Concurrents** : SMT (35%), Bia (28%), Neemba (37%)
+
+## Design
+
+**Palette** : Jaune Caterpillar (#FFCD00), Noir, Dark mode premium avec glassmorphism
+
+## Structure Projet
+
+```
+neemba-intelligence/
+├── src/
+│   ├── data/          # Données mockées
+│   ├── components/    # UI components
+│   └── types/         # TypeScript
+└── ...
+```
+
+## Plan d'Exécution
+
+1. **Setup** (15 min) : Vite + dépendances
+2. **Données** (30 min) : Projets sénégalais
+3. **UI** (2-3h) : Components + charts
+4. **Polish** (1h) : Animations, responsive
+
+**Total : 2-4 heures**
+
+---
+
+Prêt à créer ce MVP !
