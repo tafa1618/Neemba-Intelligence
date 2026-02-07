@@ -1,16 +1,45 @@
-import { TrendingUp, TrendingDown, DollarSign, Target, Bell, Award } from 'lucide-react';
+import { TrendingUp, TrendingDown, DollarSign, Target, Bell, Award, Bot, Activity, CheckCircle, XCircle, Clock } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { opportunities } from '../data/opportunities';
 import { competitors } from '../data/competitors';
 import { alerts } from '../data/alerts';
+import { mockAgents } from '../data/agents';
+import { AgentActivity } from '../types/agents';
 import Header from './Header';
+import { useState, useEffect } from 'react';
 
 export default function Dashboard() {
+    const [agents, setAgents] = useState<AgentActivity[]>(mockAgents);
+
+    // Simulate real-time agent updates
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setAgents(prev => prev.map(agent => {
+                if (agent.status === 'running' && Math.random() > 0.7) {
+                    return {
+                        ...agent,
+                        status: 'success' as const,
+                        currentTask: undefined,
+                        tasksCompleted: agent.tasksCompleted + 1,
+                        tasksToday: agent.tasksToday + 1,
+                    };
+                }
+                return agent;
+            }));
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     // Calculate KPIs
     const activeOpportunities = opportunities.filter(o => ['nouveau', 'qualifie', 'preparation'].includes(o.status)).length;
     const totalValue = opportunities.reduce((sum, o) => sum + o.value, 0);
     const avgProbability = Math.round(opportunities.reduce((sum, o) => sum + o.probability, 0) / opportunities.length);
     const unreadAlerts = alerts.filter(a => !a.read).length;
+
+    // Agent stats
+    const activeAgents = agents.filter(a => a.status === 'running').length;
+    const totalAgentTasks = agents.reduce((sum, a) => sum + a.tasksToday, 0);
 
     // Evolution data (mocked trend)
     const evolutionData = [
@@ -49,12 +78,15 @@ export default function Dashboard() {
 
             {/* Section Subtitle */}
             <div className="mb-4">
-                <h2 className="text-2xl font-bold text-white mb-1">Vue d'ensemble</h2>
-                <p className="text-slate-400">Activité concurrentielle - Secteur Construction</p>
+                <h2 className="text-2xl font-bold text-white mb-1 flex items-center space-x-2">
+                    <Bot className="text-caterpillar-yellow" size={28} />
+                    <span>Intelligence IA</span>
+                </h2>
+                <p className="text-slate-400">Surveillance automatisée et insights en temps réel</p>
             </div>
 
             {/* KPIs */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <KPICard
                     icon={Target}
                     label="Opportunités Actives"
@@ -87,6 +119,24 @@ export default function Dashboard() {
                     change={0}
                     trend="stable"
                     color="red"
+                />
+                <KPICard
+                    icon={Bot}
+                    label="Agents IA Actifs"
+                    value={`${activeAgents}/${agents.length}`}
+                    sublabel="en cours"
+                    change={0}
+                    trend="stable"
+                    color="purple"
+                />
+                <KPICard
+                    icon={Activity}
+                    label="Tâches IA Aujourd'hui"
+                    value={totalAgentTasks}
+                    sublabel="complétées"
+                    change={0}
+                    trend="stable"
+                    color="cyan"
                 />
             </div>
 
@@ -197,6 +247,65 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
+
+            {/* AI Agents Activity Section */}
+            <div className="glass rounded-2xl p-6">
+                <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center space-x-3">
+                        <Bot className="text-caterpillar-yellow" size={24} />
+                        <h3 className="text-white font-semibold text-lg">Activité des Agents IA</h3>
+                    </div>
+                    <div className="text-slate-400 text-sm">
+                        <span className="text-caterpillar-yellow font-medium">{activeAgents}</span> agents actifs
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {agents.map((agent) => (
+                        <AgentMiniCard key={agent.id} agent={agent} />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+// Agent Mini Card Component
+interface AgentMiniCardProps {
+    agent: AgentActivity;
+}
+
+function AgentMiniCard({ agent }: AgentMiniCardProps) {
+    const statusConfig = {
+        running: { color: 'bg-blue-500', text: 'En cours', icon: Activity },
+        idle: { color: 'bg-slate-500', text: 'Inactif', icon: Clock },
+        success: { color: 'bg-green-500', text: 'Succès', icon: CheckCircle },
+        error: { color: 'bg-red-500', text: 'Erreur', icon: XCircle },
+    };
+
+    const status = statusConfig[agent.status];
+    const StatusIcon = status.icon;
+
+    return (
+        <div className="bg-slate-800/30 rounded-lg p-4 hover:bg-slate-800/50 transition-colors border border-slate-700">
+            <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center space-x-2">
+                    <Bot size={16} className="text-caterpillar-yellow" />
+                    <h4 className="text-white text-sm font-medium">{agent.agentName}</h4>
+                </div>
+                <div className={`w-2 h-2 rounded-full ${status.color} ${agent.status === 'running' ? 'animate-pulse' : ''}`}></div>
+            </div>
+
+            {agent.currentTask && (
+                <div className="mb-3 p-2 bg-blue-500/10 border border-blue-500/30 rounded text-xs text-blue-300">
+                    {agent.currentTask.substring(0, 50)}...
+                </div>
+            )}
+
+            <div className="flex items-center justify-between text-xs">
+                <span className="text-slate-400">Aujourd'hui: <span className="text-white font-medium">{agent.tasksToday}</span></span>
+                <span className="text-green-400 font-medium">{agent.successRate}%</span>
+            </div>
         </div>
     );
 }
@@ -208,7 +317,7 @@ interface KPICardProps {
     sublabel?: string;
     change: number;
     trend: 'up' | 'down' | 'stable';
-    color: 'yellow' | 'green' | 'blue' | 'red';
+    color: 'yellow' | 'green' | 'blue' | 'red' | 'purple' | 'cyan';
 }
 
 function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: KPICardProps) {
@@ -217,6 +326,8 @@ function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: K
         green: 'from-green-500/20 to-green-600/20 border-green-500/30',
         blue: 'from-blue-500/20 to-blue-600/20 border-blue-500/30',
         red: 'from-red-500/20 to-red-600/20 border-red-500/30',
+        purple: 'from-purple-500/20 to-purple-600/20 border-purple-500/30',
+        cyan: 'from-cyan-500/20 to-cyan-600/20 border-cyan-500/30',
     };
 
     const iconColorClasses = {
