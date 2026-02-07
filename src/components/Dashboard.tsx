@@ -71,32 +71,24 @@ export default function Dashboard() {
                     icon={DollarSign}
                     label="Revenu Total"
                     value={`${(totalRevenue / 1_000_000).toFixed(1)}M CFA`}
-                    change={12.5}
-                    trend="up"
                     color="yellow"
                 />
                 <KPICard
                     icon={Users}
                     label="Clients Actifs"
                     value={activeClients}
-                    change={8.2}
-                    trend="up"
                     color="green"
                 />
                 <KPICard
                     icon={Target}
                     label="Taux de Conversion"
                     value={`${conversionRate}%`}
-                    change={3.1}
-                    trend="up"
                     color="blue"
                 />
                 <KPICard
                     icon={Bell}
                     label="Alertes Non Lues"
                     value={unreadAlerts}
-                    change={0}
-                    trend="stable"
                     color="red"
                 />
                 <KPICard
@@ -252,12 +244,10 @@ interface KPICardProps {
     label: string;
     value: string | number;
     sublabel?: string;
-    change?: number;
-    trend?: 'up' | 'down' | 'stable';
     color: 'yellow' | 'green' | 'blue' | 'red' | 'purple' | 'cyan';
 }
 
-function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: KPICardProps) {
+function KPICard({ icon: Icon, label, value, sublabel, color }: KPICardProps) {
     const iconColorClasses = {
         yellow: 'text-caterpillar-yellow',
         green: 'text-green-400',
