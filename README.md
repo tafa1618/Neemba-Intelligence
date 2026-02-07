@@ -11,7 +11,7 @@ Dashboard de démonstration avec données mockées pour le secteur Construction 
 
 ## 📋 Description
 
-Ce dashboard MVP vous permet de démontrer les capacités d'un système de veille concurrentielle intelligent pour Neemba Cat. Il surveille les concurrents **SMT (Komatsu)** et **Bia (Volvo)** dans le secteur Construction au Sénégal.
+Ce dashboard MVP  permet de démontrer les capacités d'un système de veille concurrentielle intelligent pour Neemba Cat. Il surveille les concurrents **SMT (Komatsu)** et **Bia (Volvo)** dans le secteur Construction au Sénégal.
 
 ### Fonctionnalités
 
