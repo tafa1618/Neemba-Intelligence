@@ -316,25 +316,23 @@ interface KPICardProps {
 }
 
 function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: KPICardProps) {
-    const colorClasses = {
-        const iconColorClasses = {
-            yellow: 'text-caterpillar-yellow',
-            green: 'text-green-400',
-            blue: 'text-blue-400',
-            red: 'text-red-400',
-            purple: 'text-purple-400',
-            cyan: 'text-cyan-400',
-        };
+    const iconColorClasses = {
+        yellow: 'text-caterpillar-yellow',
+        green: 'text-green-400',
+        blue: 'text-blue-400',
+        red: 'text-red-400',
+        purple: 'text-purple-400',
+        cyan: 'text-cyan-400',
+    };
 
-        return(
-        <div className = {`glass rounded-2xl p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700`} >
+    return (
+        <div className="glass rounded-2xl p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700">
             <div className="flex items-center justify-between mb-4">
                 <div className={`p-3 rounded-lg bg-slate-800/50 ${iconColorClasses[color]}`}>
                     <Icon size={24} />
                 </div>
                 {trend && trend !== 'stable' && change !== undefined && (
-                    <div className={`flex items-center space-x-1 text-sm font-medium ${trend === 'up' ? 'text-green-400' : 'text-red-400'
-                        }`}>
+                    <div className={`flex items-center space-x-1 text-sm font-medium ${trend === 'up' ? 'text-green-400' : 'text-red-400'}`}>
                         {trend === 'up' ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
                         <span>{Math.abs(change)}%</span>
                     </div>
@@ -345,6 +343,6 @@ function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: K
                 <h3 className="text-white text-3xl font-bold">{value}</h3>
                 {sublabel && <span className="text-slate-400 text-sm">{sublabel}</span>}
             </div>
-        </div >
+        </div>
     );
 }
