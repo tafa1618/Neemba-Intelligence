@@ -35,7 +35,7 @@ export default function Dashboard() {
     const activeOpportunities = opportunities.filter(o => ['nouveau', 'qualifie', 'preparation'].includes(o.status)).length;
     const totalValue = opportunities.reduce((sum, o) => sum + o.value, 0);
     const avgProbability = opportunities.length > 0
-        ? Math.round(opportunities.reduce((sum, o) => sum + (o.probability ?? 0), 0) / opportunities.length)
+        ? Math.round(opportunities.reduce((sum: number, o) => sum + (o.probability ?? 0), 0) / opportunities.length)
         : 0;
     const unreadAlerts = alerts.filter(a => !a.read).length;
 
