@@ -317,30 +317,22 @@ interface KPICardProps {
 
 function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: KPICardProps) {
     const colorClasses = {
-        yellow: 'from-yellow-500/20 to-yellow-600/20 border-yellow-500/30',
-        green: 'from-green-500/20 to-green-600/20 border-green-500/30',
-        blue: 'from-blue-500/20 to-blue-600/20 border-blue-500/30',
-        red: 'from-red-500/20 to-red-600/20 border-red-500/30',
-        purple: 'from-purple-500/20 to-purple-600/20 border-purple-500/30',
-        cyan: 'from-cyan-500/20 to-cyan-600/20 border-cyan-500/30',
-    };
+        const iconColorClasses = {
+            yellow: 'text-caterpillar-yellow',
+            green: 'text-green-400',
+            blue: 'text-blue-400',
+            red: 'text-red-400',
+            purple: 'text-purple-400',
+            cyan: 'text-cyan-400',
+        };
 
-    const iconColorClasses = {
-        yellow: 'text-yellow-400',
-        green: 'text-green-400',
-        blue: 'text-blue-400',
-        red: 'text-red-400',
-        purple: 'text-purple-400',
-        cyan: 'text-cyan-400',
-    };
-
-    return (
-        <div className={`glass rounded-2xl p-6 bg-gradient-to-br ${colorClasses[color]} border`}>
-            <div className="flex items-start justify-between mb-4">
+        return(
+        <div className = {`glass rounded-2xl p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700`} >
+            <div className="flex items-center justify-between mb-4">
                 <div className={`p-3 rounded-lg bg-slate-800/50 ${iconColorClasses[color]}`}>
                     <Icon size={24} />
                 </div>
-                {trend !== 'stable' && (
+                {trend && trend !== 'stable' && change !== undefined && (
                     <div className={`flex items-center space-x-1 text-sm font-medium ${trend === 'up' ? 'text-green-400' : 'text-red-400'
                         }`}>
                         {trend === 'up' ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
@@ -348,13 +340,11 @@ function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: K
                     </div>
                 )}
             </div>
-            <div>
-                <p className="text-slate-400 text-sm mb-1">{label}</p>
-                <div className="flex items-baseline space-x-2">
-                    <h3 className="text-white text-3xl font-bold">{value}</h3>
-                    {sublabel && <span className="text-slate-400 text-sm">{sublabel}</span>}
-                </div>
+            <p className="text-slate-400 text-sm mb-1">{label}</p>
+            <div className="flex items-baseline space-x-2">
+                <h3 className="text-white text-3xl font-bold">{value}</h3>
+                {sublabel && <span className="text-slate-400 text-sm">{sublabel}</span>}
             </div>
-        </div>
+        </div >
     );
 }
