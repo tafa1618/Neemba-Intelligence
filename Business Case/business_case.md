@@ -46,7 +46,7 @@
 | → Figma Professional | Design système | 8 000 CFA | 24 000 CFA |
 | **TOTAL PHASE 1** | | | **489 000 CFA** |
 
-> **Note :** Développement assuré en interne par l'équipe IT existante (économie de 1,35M CFA)
+> **Note :** Développement assuré en interne par l'équipe IT existante si possible (économie de 1,35M CFA)
 
 ### **Phase 2 : Scale & Optimisation (6 mois suivants)**
 
@@ -69,7 +69,7 @@
 
 ### **1. Accès aux Données**
 - ✅ **CRM (Salesforce/HubSpot)** : Lecture des opportunités et contacts
-- ✅ **Email professionnel** : Intégration via API (Gmail/Outlook)
+- ✅ **Email professionnel** : Intégration via API (Outlook)
 - ✅ **Réseaux sociaux** : Accès LinkedIn Sales Navigator
 - ✅ **Sites web concurrents** : Scraping légal (robots.txt compliant)
 
@@ -121,20 +121,20 @@
 
 ## 🛣️ Roadmap de Déploiement
 
-### **Phase 1 : Production MVP (Mois 1-3)**
+### **Phase 1 : Production MVP**
 - ✅ Migration vers infrastructure cloud sécurisée
 - ✅ Intégration CRM et sources de données
 - ✅ Déploiement agents IA (veille + scoring)
 - ✅ Formation équipe commerciale
 - ✅ Lancement pilote (5 utilisateurs)
 
-### **Phase 2 : Optimisation (Mois 4-6)**
+### **Phase 2 : Optimisation**
 - 📈 Analyse des métriques d'usage
 - 🤖 Amélioration des algorithmes IA
 - 🎨 Refinement UX basé sur feedback
 - 📊 Ajout de dashboards personnalisés
 
-### **Phase 3 : Scale (Mois 7-12)**
+### **Phase 3 : Scale**
 - 🌍 Déploiement à toute l'équipe commerciale
 - 🔗 Intégrations supplémentaires (LinkedIn, Twitter/X)
 - 📱 Application mobile (iOS/Android)
@@ -172,7 +172,7 @@
 - ✅ ROI > 500%
 - ✅ Économie de 7h/semaine par commercial
 - ✅ 0 incidents de sécurité majeurs
-- ✅ Extension à d'autres départements (Marketing, R&D)
+- ✅ Extension à d'autres départements (Marketing, Service Technique)
 
 ---
 
@@ -183,27 +183,9 @@
 2. ✅ Validation budget et autorisations
 3. ✅ Signature accord de confidentialité (NDA) avec prestataires
 
-### **Semaine 3-4 : Préparation**
-1. 📝 Rédaction cahier des charges technique
-2. 🤝 Sélection prestataires cloud (AWS/GCP)
-3. 👥 Recrutement développeur full-stack
-4. 🔐 Audit de sécurité préalable
-
-### **Mois 2-3 : Développement**
-1. 🏗️ Setup infrastructure cloud
-2. 🔌 Intégrations CRM et APIs
-3. 🤖 Déploiement agents IA
-4. 🧪 Tests utilisateurs (UAT)
-
-### **Mois 4 : Lancement**
-1. 🎓 Formation équipe commerciale
-2. 🚀 Lancement pilote (5 users)
-3. 📊 Monitoring et ajustements
-4. 📣 Communication interne
-
 ---
 
-## 💡 Arguments Clés pour le Manager
+## 💡 Arguments Clés:
 
 ### **1. Avantage Compétitif**
 > "Nos concurrents investissent déjà dans l'IA. Ne pas agir = perdre des parts de marché."
@@ -212,7 +194,7 @@
 > "Investissement de 6,5M CFA pour un gain estimé de 577M CFA la première année."
 
 ### **3. Scalabilité**
-> "Une fois en place, le système peut s'étendre à d'autres départements (Marketing, R&D) sans coûts majeurs."
+> "Une fois en place, le système peut s'étendre à d'autres départements (Marketing, Service Technique) sans coûts majeurs."
 
 ### **4. Risque Maîtrisé**
 > "MVP déjà fonctionnel (démo live). On valide avant d'investir massivement."
@@ -224,10 +206,10 @@
 
 ## 📞 Contact & Support
 
-**Chef de Projet :** [Votre Nom]  
-**Email :** [votre.email@neemba.com]  
+**Chef de Projet :**   Mohamadou Moustapha GAYE
+**Email :**  mohamadou-moustapha.gaye@neemba.com
 **Démo Live :** https://infa1618.github.io/neemba-intelligence/  
-**Documentation Technique :** [Lien vers repo GitHub]
+**Documentation Technique :** https://github.com/tafa1618/neemba-intelligence
 
 ---
 
