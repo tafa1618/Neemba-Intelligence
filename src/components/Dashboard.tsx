@@ -280,7 +280,6 @@ function AgentMiniCard({ agent }: AgentMiniCardProps) {
     };
 
     const status = statusConfig[agent.status];
-    const StatusIcon = status.icon;
 
     return (
         <div className="bg-slate-800/30 rounded-lg p-4 hover:bg-slate-800/50 transition-colors border border-slate-700">
@@ -331,6 +330,8 @@ function KPICard({ icon: Icon, label, value, sublabel, change, trend, color }: K
         green: 'text-green-400',
         blue: 'text-blue-400',
         red: 'text-red-400',
+        purple: 'text-purple-400',
+        cyan: 'text-cyan-400',
     };
 
     return (

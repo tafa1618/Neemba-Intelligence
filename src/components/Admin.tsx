@@ -5,10 +5,10 @@ import { AgentActivity } from '../types/agents';
 
 interface AdminProps {
     userEmail: string;
-    userRole: string;
+    userRole?: string;
 }
 
-export default function Admin({ userEmail, userRole }: AdminProps) {
+export default function Admin({ userEmail }: AdminProps) {
     const [activeTab, setActiveTab] = useState<'agents' | 'config' | 'integrations'>('agents');
     const [agents] = useState<AgentActivity[]>(mockAgents);
 
@@ -276,40 +276,47 @@ function SystemConfiguration() {
 
 // Integrations Panel
 function IntegrationsPanel() {
-    const integrations = [
-        {
-            name: 'Salesforce',
-            status: 'connected',
-            icon: '☁️',
-            lastSync: '2026-02-07T17:45:00Z',
-            records: '1,247',
-            description: 'CRM - Opportunités et clients'
-        },
-        {
-            name: 'ERP Neemba',
-            status: 'connected',
-            icon: '💼',
-            lastSync: '2026-02-07T18:00:00Z',
-            records: '3,842',
-            description: 'Historique achats et facturation'
-        },
-        {
-            name: 'Azure AD',
-            status: 'pending',
-            icon: '🔐',
-            lastSync: null,
-            records: '0',
-            description: 'Authentification SSO (Production)'
-        },
-        {
-            name: 'ARMP Sénégal',
-            status: 'connected',
-            icon: '📋',
-            lastSync: '2026-02-07T17:55:00Z',
-            records: '156',
-            description: 'Appels d\'offres publics'
-        },
-    ];
+    const integrations: Array<{
+        name: string;
+        status: 'connected' | 'pending' | 'error';
+        icon: string;
+        lastSync: string | null;
+        records: string;
+        description: string;
+    }> = [
+            {
+                name: 'Salesforce',
+                status: 'connected' as const,
+                icon: '☁️',
+                lastSync: '2026-02-07T17:45:00Z',
+                records: '1,247',
+                description: 'CRM - Opportunités et clients'
+            },
+            {
+                name: 'ERP Neemba',
+                status: 'connected' as const,
+                icon: '💼',
+                lastSync: '2026-02-07T18:00:00Z',
+                records: '3,842',
+                description: 'Historique achats et facturation'
+            },
+            {
+                name: 'Azure AD',
+                status: 'pending' as const,
+                icon: '🔐',
+                lastSync: null,
+                records: '0',
+                description: 'Authentification SSO (Production)'
+            },
+            {
+                name: 'ARMP Sénégal',
+                status: 'connected' as const,
+                icon: '📋',
+                lastSync: '2026-02-07T17:55:00Z',
+                records: '156',
+                description: 'Appels d\'offres publics'
+            },
+        ];
 
     return (
         <div className="space-y-6">

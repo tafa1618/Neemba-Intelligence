@@ -66,7 +66,7 @@ function App() {
 
     return (
         <div className="flex h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-            <Sidebar currentPage={currentPage} onPageChange={setCurrentPage} userRole={user.role} />
+            <Sidebar currentPage={currentPage} onPageChange={(page) => setCurrentPage(page as Page)} userRole={user.role} />
 
             <main className="flex-1 overflow-y-auto p-8">
                 <div className="max-w-7xl mx-auto animate-fadeIn">

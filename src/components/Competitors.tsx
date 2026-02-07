@@ -1,4 +1,4 @@
-import { TrendingUp, TrendingDown, Target, Award, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { TrendingUp, Target, Award, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { competitors } from '../data/competitors';
 import { opportunities } from '../data/opportunities';
 

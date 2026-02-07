@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Bot, Activity, CheckCircle, XCircle, Clock, Zap, TrendingUp, AlertTriangle } from 'lucide-react';
+import { Bot, Activity, CheckCircle, XCircle, Clock, Zap, TrendingUp } from 'lucide-react';
 import { mockAgents } from '../data/agents';
 import { AgentActivity } from '../types/agents';
 
@@ -143,7 +143,6 @@ function AgentCard({ agent, onClick }: AgentCardProps) {
 
     const status = statusConfig[agent.status];
     const type = typeConfig[agent.agentType];
-    const StatusIcon = status.icon;
 
     return (
         <div
