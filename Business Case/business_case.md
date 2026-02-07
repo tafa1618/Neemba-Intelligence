@@ -178,11 +178,6 @@
 
 ## 📋 Prochaines Étapes Recommandées
 
-### **Semaine 1-2 : Validation**
-1. ✅ Présentation au comité de direction
-2. ✅ Validation budget et autorisations
-3. ✅ Signature accord de confidentialité (NDA) avec prestataires
-
 ---
 
 ## 💡 Arguments Clés:
