@@ -24,7 +24,18 @@ function App() {
     useEffect(() => {
         const savedUser = localStorage.getItem('neemba_user');
         if (savedUser) {
-            setUser(JSON.parse(savedUser));
+            try {
+                const parsedUser = JSON.parse(savedUser);
+                if (parsedUser && parsedUser.email && parsedUser.role) {
+                    setUser(parsedUser);
+                } else {
+                    // Invalid data structure
+                    localStorage.removeItem('neemba_user');
+                }
+            } catch (error) {
+                console.error('Failed to parse user session:', error);
+                localStorage.removeItem('neemba_user');
+            }
         }
     }, []);
 
