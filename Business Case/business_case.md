@@ -5,7 +5,12 @@
 
 ## 🎯 Résumé Exécutif
 
-**Neemba Intelligence** est une plateforme MVP d'intelligence compétitive qui automatise la veille concurrentielle et l'analyse d'opportunités commerciales grâce à des agents IA.
+**Neemba Intelligence**  est une plateforme interne d’aide à la décision qui permet d’anticiper les opportunités commerciales, surveiller la concurrence et prioriser les actions commerciales en temps réel.
+
+Dans un contexte de pression économique accrue, l’objectif est de réduire les décisions tardives, augmenter la réactivité commerciale et sécuriser le chiffre d’affaires à partir de signaux faibles aujourd’hui dispersés ou non exploités.
+
+Un prototype fonctionnel existe déjà et démontre la faisabilité technique et l’intérêt métier.
+Le présent business case vise à valider un déploiement contrôlé à faible risque. .
 
 **Démo Live :** https://infa1618.github.io/neemba-intelligence/
 
@@ -111,7 +116,7 @@
 - 30 opportunités supplémentaires/an × 50M CFA (valeur moyenne) × 35% (taux conversion) = **525M CFA**
 - Temps commercial économisé : 7h/semaine × 10 commerciaux × 50 semaines × 15 000 CFA/h = **52,5M CFA**
 
-**ROI = (577,5M - 1,6M) / 1,6M × 100 = 36 719%**
+**ROI = Le ROI exact dépendra de l'adoption, mais le "Break Event" est atteint avec seulement **1 opportunité captée**
 
 **Retour sur investissement en < 2 semaines** 🚀
 
@@ -193,8 +198,18 @@
 
 ### **4. Risque Maîtrisé**
 > "MVP déjà fonctionnel (démo live). On valide avant d'investir massivement."
+### **5. Propriété Intellectuelle:
+>Contrairement aux solutions SaaS externes :
 
-### **5. Conformité**
+. les données restent chez Neemba
+
+. les modèles sont ajustés à notre réalité locale
+
+. l’outil devient un actif stratégique interne
+
+. la dépendance fournisseur est maîtrisée
+
+### **6. Conformité**
 > "Architecture cloud sécurisée, conforme RGPD et ISO 27001."
 
 ---
